@@ -16,6 +16,7 @@ export class WeatherAppComponent implements OnInit {
   currentDate: string = '';
   loading: boolean = false;
   error: string = '';
+  theme: string = 'light-theme';
 
   private url = 'https://api.openweathermap.org/data/2.5/weather';
   private apiKey = 'f00c38e0279b7bc85480c3fe775d518c';
@@ -48,5 +49,9 @@ export class WeatherAppComponent implements OnInit {
 
   clear() {
     this.weatherData = null;
+  }
+  
+  setTheme(mode: string) {
+    this.theme = mode === 'dark' ? 'dark-theme' : 'light-theme';
   }
 }
